@@ -4,8 +4,13 @@
   "editor": "wokwi",
   "parts": [
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
-    { "type": "wokwi-mpu6050", "id": "imu1", "top": -101.78, "left": 40.72, "attrs": {} }
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 263.02, "left": 117.52, "attrs": {} }
   ],
-  "connections": [],
+  "connections": [
+    [ "uno:5V", "imu1:VCC", "red", [ "v38.3", "h32.6" ] ],
+    [ "imu1:GND", "uno:GND.2", "black", [ "v-28.8", "h-19.12" ] ],
+    [ "imu1:SCL", "uno:A5", "green", [ "v-67.2", "h86.48" ] ],
+    [ "imu1:SDA", "uno:A4", "green", [ "v-28.8", "h67.28" ] ]
+  ],
   "dependencies": {}
 }
