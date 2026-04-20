@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "author": "Artemio Baza Palacios",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -101.78, "left": 40.72, "attrs": {} }
+  ],
+  "connections": [],
+  "dependencies": {}
+}
