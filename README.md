@@ -1,4 +1,4 @@
-# Flight-computer-arduino-uno
+# Flight Computer, powered by arduino uno and sensor MPU6050
 A flight computer powered by an arduino uno, made in wokwi. 
 
 # Setup:
