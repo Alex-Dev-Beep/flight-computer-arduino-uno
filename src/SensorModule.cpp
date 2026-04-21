@@ -1,6 +1,8 @@
 #define MPU_ADDR 0x68
+#define PI 3.14159
 #include "SensorModule.h"
 #include <Wire.h>
+#include <math.h>
 
 void SensorModule::init() {
   Wire.begin();
@@ -56,6 +58,10 @@ IMUData SensorModule::read() {
   data.gz = gz / 131.0;
 
   data.temp = (temp / 340.0) + 36.53;
+
+  data.pitch = atan2(data.ay, data.az) * 180 / PI;
+  data.roll = atan2(data.ax, data.az) * 180 / PI;
+  data.yaw = 0; // TO DO
 
   return data;
 }
