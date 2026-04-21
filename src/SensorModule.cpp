@@ -61,7 +61,6 @@ IMUData SensorModule::read() {
 
   data.pitch = atan2(data.ay, data.az) * 180 / PI;
   data.roll = atan2(data.ax, data.az) * 180 / PI;
-  data.yaw = 0; // TO DO
 
   return data;
 }
