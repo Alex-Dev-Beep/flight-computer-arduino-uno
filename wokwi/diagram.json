@@ -4,7 +4,14 @@
   "editor": "wokwi",
   "parts": [
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
-    { "type": "wokwi-mpu6050", "id": "imu1", "top": 263.02, "left": 117.52, "attrs": {} }
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 263.02, "left": 117.52, "attrs": {} },
+    {
+      "type": "wokwi-neopixel-meter",
+      "id": "meter1",
+      "top": 9.6,
+      "left": 316.8,
+      "attrs": { "pixels": "16" }
+    }
   ],
   "connections": [
     [ "uno:5V", "imu1:VCC", "red", [ "v38.3", "h32.6" ] ],
