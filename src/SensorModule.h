@@ -5,7 +5,6 @@ struct IMUData {
   
   float pitch;
   float roll;
-  float yaw;
 };
 
 class SensorModule {
