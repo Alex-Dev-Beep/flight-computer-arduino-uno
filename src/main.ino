@@ -18,6 +18,12 @@ void loop() {
   Serial.println(data.az);
   Serial.print("Temperature: ");
   Serial.println(data.temp);
+  Serial.print("Pitch: ");
+  Serial.println(data.pitch);
+  Serial.print("Roll: ");
+  Serial.println(data.roll);
+  Serial.print("Yaw: ");
+  Serial.println(data.yaw);
 
   delay(100);
 }
