@@ -1,40 +1,42 @@
 #include "ScreenModule.h"
 #include "SensorModule.h"
+#include "OLED.h"
+#include <stdio.h>
 
-void showDebugInfo(Adafruit_SSD1306& display, IMUData data) {
-  display.setCursor(0, 15);
+void showDebugInfo(IMUData data) {
+  char buffer[32];
 
-  display.print(F("AX: "));
-  display.print(data.ax);
+  char ax[10], ay[10], az[10];
+  char gx[10], gy[10], gz[10];
+  char temp[10], pitch[10], roll[10];
 
-  display.print(F(" AY: "));
-  display.print(data.ay);
-  
-  display.setCursor(0, 23);
+  dtostrf(data.ax, 5, 2, ax);
+  dtostrf(data.ay, 5, 2, ay);
+  dtostrf(data.az, 5, 2, az);
 
-  display.print(F("AZ: "));
-  display.print(data.az);
+  dtostrf(data.gx, 5, 2, gx);
+  dtostrf(data.gy, 5, 2, gy);
+  dtostrf(data.gz, 5, 2, gz);
 
-  display.print(F(" GX: "));
-  display.print(data.gx);
+  dtostrf(data.temp, 5, 2, temp);
+  dtostrf(data.pitch, 5, 2, pitch);
+  dtostrf(data.roll, 5, 2, roll);
 
-  display.setCursor(0, 31);
-  display.print(F("GY: "));
-  display.print(data.gy);
+  snprintf(buffer, sizeof(buffer), "AX:%s AY:%s", ax, ay);
+  oled_printLine(1, buffer);
 
-  display.print(F(" GZ: "));
-  display.print(data.gz);
+  snprintf(buffer, sizeof(buffer), "AZ:%s GX:%s", az, gx);
+  oled_printLine(2, buffer);
 
-  display.setCursor(0, 39);
-  display.print(F("Temp: "));
-  display.print(data.temp);
-  display.print(F("C"));
+  snprintf(buffer, sizeof(buffer), "GY:%s GZ:%s", gy, gz);
+  oled_printLine(3, buffer);
 
-  display.setCursor(0, 47);
-  display.print(F("Pitch: "));
-  display.print(data.pitch);
+  snprintf(buffer, sizeof(buffer), "Temp:%sC", temp);
+  oled_printLine(4, buffer);
 
-  display.setCursor(0, 55);
-  display.print(F("Roll: "));
-  display.print(data.roll); 
+  snprintf(buffer, sizeof(buffer), "Pitch:%s", pitch);
+  oled_printLine(5, buffer);
+
+  snprintf(buffer, sizeof(buffer), "Roll:%s", roll);
+  oled_printLine(6, buffer);
 }
