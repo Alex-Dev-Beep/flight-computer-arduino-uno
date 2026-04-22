@@ -25,10 +25,10 @@
     [ "imu1:GND", "uno:GND.2", "black", [ "v-28.8", "h-19.12" ] ],
     [ "imu1:SCL", "uno:A5", "green", [ "v-67.2", "h86.48" ] ],
     [ "imu1:SDA", "uno:A4", "green", [ "v-28.8", "h67.28" ] ],
-    [ "oled2:GND", "uno:GND.2", "black", [ "v-76.8", "h297.6" ] ],
     [ "oled2:VCC", "uno:5V", "red", [ "v0" ] ],
     [ "uno:A5", "oled2:SCL", "green", [ "v0" ] ],
-    [ "oled2:SDA", "uno:A4", "green", [ "v0" ] ]
+    [ "oled2:SDA", "uno:A4", "green", [ "v0" ] ],
+    [ "oled2:GND", "uno:GND.2", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }
